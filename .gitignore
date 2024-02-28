@@ -1,0 +1,10 @@
+node_modules/
+*_sessions
+*qr.png
+*.log
+
+# Local Variables
+.env
+
+# Package Managers
+*-lock.*
