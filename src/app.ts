@@ -12,16 +12,22 @@ const flowBienvenida = addKeyword("hola").addAnswer("Bienvenido");
 const main = async () => {
   const provider = createProvider(BaileysProvider);
 
-  provider.initHttpServer(3002);
+  provider.initHttpServer(3000);
 
   provider.http?.server.post(
     "/send-message",
     handleCtx(async (bot, req, res) => {
-      const phone = req.body.phone;
-      const message = req.body.message;
+      try {
+        const phone = req.body.phone;
+        const message = req.body.message;
 
-      await bot.sendMessage(phone, message, {});
-      res.end("Mensaje enviado");
+        await bot.sendMessage(phone, message, {});
+
+        res.end({ ok: true, message: "Mensaje enviado" });
+      } catch (error) {
+        console.error(error);
+        res.end({ ok: false, message: "Mensaje no se pudo enviar" });
+      }
     })
   );
 
