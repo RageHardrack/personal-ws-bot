@@ -10,6 +10,6 @@ FROM --platform=linux/amd64 builder as prod
 EXPOSE 3000
 WORKDIR /app
 COPY --from=builder /app/node_modules ./node_modules
-COPY ./src .
+COPY . .
 
 CMD ["pnpm", "dev"]
