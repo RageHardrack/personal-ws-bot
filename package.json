@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "npx tsm ./src/app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build":"docker build -t hardrack/personal-ws-bot:latest ."
   },
   "keywords": [],
   "author": "",

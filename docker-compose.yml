@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  bot-daniel:
+    image: hardrack/personal-ws-bot:latest
+    restart: always
+    container_name: bot-daniel
+    ports:
+      - 3000:3000
+    volumes:
+      - ./bot-volume-daniel:/app/bot_sessions

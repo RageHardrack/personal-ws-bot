@@ -1,4 +1,6 @@
+# Dependencies
 node_modules/
+
 *_sessions
 *qr.png
 *.log
@@ -8,3 +10,6 @@ node_modules/
 
 # Package Managers
 *-lock.*
+
+# Volumes
+bot-volume-*/
